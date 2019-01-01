@@ -59,7 +59,7 @@ dt_avg <- dt %>%
     summarize_all(mean)
 
 tidy_dt_avg <- gather(dt_avg, 3:81, key = "varID", value = "avg_measure")
-
+write.table(tidy_dt_avg, "tidy.txt", row.names = FALSE, quote = FALSE)
 
 
 # Optional: clean workspace by removing intermediate objects --------------
