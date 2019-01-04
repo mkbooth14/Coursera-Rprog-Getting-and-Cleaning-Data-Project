@@ -39,9 +39,7 @@ test <- test_data %>% select(pos_mean_std) %>%
 
 
 # Merged dataset ----------------------------------------------------------
-# Combine train and test data by rows then add in proper labels for activity
-# and variables. To make this dataset `tidy`, the variables need to be gathered.
-# by gathering variables into one column.
+# Combine train and test data by rows then add in proper labels for activity and variables. 
 dt <- rbind(train, test)
 colnames(dt) <- c("subjectID","activity", label_mean_std)
 match_act <- match(dt$activity, act_label)
@@ -49,18 +47,14 @@ dt$activity <- ifelse(is.na(match_act),
                             dt$activity,
                             names(act_label)[match_act])
 
-tidy_dt <- gather(dt, 3:81, key = "varID", value = "measure")
-
 
 # Average of each variable for each activity & subject ---------------------
-# To make this dataset `tidy`, the variables need to be gathered.
 dt_avg <- dt %>%
     group_by(subjectID, activity) %>%
     summarize_all(mean)
 
-tidy_dt_avg <- gather(dt_avg, 3:81, key = "varID", value = "avg_measure")
 write.table(tidy_dt_avg, "tidy.txt", row.names = FALSE, quote = FALSE)
 
 
 # Optional: clean workspace by removing intermediate objects --------------
-rm(list=setdiff(ls(), c("tidy_dt", "tidy_dt_avg")))
+rm(list=setdiff(ls(), c("dt", "dt_avg")))
