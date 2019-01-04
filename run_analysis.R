@@ -53,7 +53,7 @@ dt_avg <- dt %>%
     group_by(subjectID, activity) %>%
     summarize_all(mean)
 
-write.table(tidy_dt_avg, "tidy.txt", row.names = FALSE, quote = FALSE)
+write.table(dt_avg, "tidy.txt", row.names = FALSE, quote = FALSE)
 
 
 # Optional: clean workspace by removing intermediate objects --------------
