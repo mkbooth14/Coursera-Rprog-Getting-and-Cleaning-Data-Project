@@ -8,5 +8,4 @@ This is the course project for the Getting and Cleaning Data Coursera course Dat
 5. Provides descriptive and tidy labels for the activities and variables.
 6. Creates another data set with the average of each variable for each activity and each subject.
 
-See `CodeBook.md` for a description of the variables, the data, and the transformations performed to clean up the data. Additionally, a full description of the data is avaliable at the site where it was obtained:
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+See `CodeBook.md` for a description of the variables, the data, and the transformations performed to clean up the data. Additionally, a full description of the data is avaliable at the [site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) where it was obtained
